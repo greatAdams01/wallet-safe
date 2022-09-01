@@ -1,0 +1,38 @@
+{
+  "name": "safe-wallet",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@gnosis.pm/safe-apps-provider": "^0.13.0",
+    "@gnosis.pm/safe-apps-react-sdk": "^4.6.1",
+    "@gnosis.pm/safe-apps-sdk": "^7.7.0",
+    "@gnosis.pm/safe-apps-web3-react": "^1.5.1",
+    "@gnosis.pm/safe-apps-web3modal": "^16.0.0",
+    "@gnosis.pm/safe-react-components": "^1.2.0",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-toastify": "^9.0.8",
+    "recoil": "^0.7.5",
+    "styled-components": "^5.3.5",
+    "web3modal": "^1.9.9"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.14",
+    "@types/react": "18.0.18",
+    "@types/react-dom": "18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "autoprefixer": "^10.4.8",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
+    "typescript": "4.8.2"
+  }
+}
