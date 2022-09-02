@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import Link from 'next/link';
 import Web3Model from 'web3modal'
+import WalletConnectProvider from "@walletconnect/web3-provider";
 import { ethers } from 'ethers';
 import { useState } from 'react';
+import { useRecoilState } from 'recoil';
 import { shortenAddress } from '../utils/shortAddress';
-import WalletConnectProvider from "@walletconnect/web3-provider";
 
 const providerOptions = {
   walletconnect: {
@@ -17,7 +18,6 @@ const providerOptions = {
 
 const Header: NextPage = () =>  {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [web3Provider, setWeb3Provider] = useState<any>({})
   const [currentAccount, setCurrentAccount] = useState<string | undefined>()
 
   const connectWallet = async () => {
@@ -31,7 +31,9 @@ const Header: NextPage = () =>  {
       const web3modalProvider = new ethers.providers.Web3Provider(web3ModelInstance)
       web3modalProvider.send("eth_requestAccounts", [])
       .then((accounts)=>{
-        if(accounts.length>0) setCurrentAccount(accounts[0])
+        if(accounts.length>0) {
+          setCurrentAccount(accounts[0])
+        }
       }).catch((e)=>console.log(e))
 
     } catch (error) {

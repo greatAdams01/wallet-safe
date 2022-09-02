@@ -1,21 +1,16 @@
-import SafeProvider from '@gnosis.pm/safe-apps-react-sdk';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '@gnosis.pm/safe-react-components';
 import { MoralisProvider } from 'react-moralis'
+import {
+  RecoilRoot
+} from 'recoil'
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import BaseLayout from '../layout/base'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
   return(
-    // <ThemeProvider theme={theme}>
-    <MoralisProvider initializeOnMount={false}>
-      <BaseLayout>
+    <RecoilRoot>
         <Component {...pageProps} />
-      </BaseLayout>
-    </MoralisProvider>
-    // </ThemeProvider>
+    </RecoilRoot>
   )
 }
 
