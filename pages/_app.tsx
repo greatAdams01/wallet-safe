@@ -1,4 +1,3 @@
-import { MoralisProvider } from 'react-moralis'
 import {
   RecoilRoot
 } from 'recoil'
